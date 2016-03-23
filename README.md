@@ -15,7 +15,7 @@ Elegent,
 And easy to use.
 
 
-Dependencies: 
+## Dependencies: 
 
     pod 'MJExtension'
     pod 'ReactiveCocoa'
