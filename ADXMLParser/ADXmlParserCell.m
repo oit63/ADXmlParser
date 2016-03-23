@@ -28,7 +28,7 @@
                 NSData *xmlData = inputDict[@"xmlData"];
                 NSDictionary *xmlModelsDictionary = inputDict[@"xmlModelsDictionary"];
                 
-                [xmlModelsDictionary each:^(NSString * modelNodeValue, NSString *  modelClassKey) {
+                [xmlModelsDictionary each:^(NSString *modelClassKey, NSString *modelNodeValue) {
                    
                     HYXMLParser* parser = [[HYXMLParser alloc] initWithModelClassName:modelClassKey withElementName:modelNodeValue modelFromBlock:^(NSDictionary<NSString *,NSString *> *data, id model) {
                         [model mj_setKeyValues:data];
