@@ -14,3 +14,9 @@ Elegent,
 
 And easy to use.
 
+
+Dependencies: 
+
+    pod 'MJExtension'
+    pod 'ReactiveCocoa'
+    pod 'ObjectiveSugar'
