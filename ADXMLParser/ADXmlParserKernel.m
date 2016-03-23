@@ -19,8 +19,9 @@
     if (self) {
         self.xmlParserCell = [[ADXmlParserCell alloc] initWithParams:params];
         self.rac_innerOutput = self.xmlParserCell.rac_innerOutput;
-
+        @weakify(self);
         [RACObserve(self, rac_outerInput) subscribeNext:^(id x) {
+        @strongify(self);
             self.xmlParserCell.rac_outerInput = self.rac_outerInput;
         }];
     }

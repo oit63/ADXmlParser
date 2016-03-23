@@ -11,4 +11,6 @@
 @interface NSData (ADXmlParserConvenience)
 - (void)parseXmlWithProtocolDictionary:(NSDictionary *)protocolDictionary toModels:(ADXmlParserParamBlock)outputBlock;
 - (void)parseXmlToModels:(ADXmlParserParamBlock)outputBlock WithProtocolDictionary:(NSDictionary *)protocolDictionary;
+- (void)parseXmlToModels:(ADXmlParserParamBlock)outputBlock WithProtocolDictionary:(NSDictionary *)protocolDictionary
+                encoding:(NSStringEncoding)encoding;
 @end

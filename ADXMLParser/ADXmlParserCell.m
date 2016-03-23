@@ -23,16 +23,18 @@
 {
     self = [super init];
     if (self) {
+        @weakify(self);
         [RACObserve(self, rac_outerInput) subscribeNext:^(id x) {
+         @strongify(self);
             [self.rac_outerInput  subscribeNext:^(NSDictionary *inputDict) {
                 NSData *xmlData = inputDict[@"xmlData"];
                 NSDictionary *xmlModelsDictionary = inputDict[@"xmlModelsDictionary"];
-                
+        
                 [xmlModelsDictionary each:^(NSString *modelClassKey, NSString *modelNodeValue) {
-                   
                     HYXMLParser* parser = [[HYXMLParser alloc] initWithModelClassName:modelClassKey withElementName:modelNodeValue modelFromBlock:^(NSDictionary<NSString *,NSString *> *data, id model) {
                         [model mj_setKeyValues:data];
                     }];
+                    
                     NSMutableArray* models = [parser modelsArrayFromData:xmlData];
                     if (models.count) {
                         [self.parsedModelsDictionary setValue:models[0] forKey:modelClassKey];
