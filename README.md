@@ -1,7 +1,8 @@
 # ADXmlParser
 
-ADXmlParser is a categoryTool for parsing out Models from XML Data
+ADXmlParser is a categoryTool for parsing out Models from XML Data.
 
+Follow is the Final:
 
     NSData *xmlData = ...;
     [xmlData parseXmlToModels:^(NSDictionary *modelsDictionary) {
@@ -12,4 +13,4 @@ ADXmlParser is a categoryTool for parsing out Models from XML Data
                                @"ModelClassNameB":@"XmlNodeNameB"}];
 
 
-so elegent, and easy to use
+Elegent, and easy to use.
